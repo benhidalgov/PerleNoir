@@ -36,7 +36,16 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    Diseño de Vestuario
+                    De la sombra nace nuestro brillo
+                </motion.p>
+
+                <motion.p
+                    className="hero__tagline hero__tagline--sub"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                >
+                    Moda Alternativa &amp; Expresiva
                 </motion.p>
             </div>
 

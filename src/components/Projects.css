@@ -1,9 +1,58 @@
 /* ==========================================
-   Projects / Collections Section
+   Projects / Collections Section — Dark Aesthetic
    ========================================== */
 
 .projects {
-    background-color: var(--color-offwhite);
+    background-color: var(--color-burgundy-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lace crosshatch texture */
+.projects::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 40px,
+            rgba(139, 30, 30, 0.03) 40px,
+            rgba(139, 30, 30, 0.03) 41px),
+        repeating-linear-gradient(-45deg,
+            transparent,
+            transparent 40px,
+            rgba(139, 30, 30, 0.03) 40px,
+            rgba(139, 30, 30, 0.03) 41px);
+    pointer-events: none;
+}
+
+/* Red atmospheric glow */
+.projects::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 70% 30%, rgba(139, 30, 30, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 70%, rgba(42, 13, 16, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.projects .section__container {
+    position: relative;
+    z-index: 1;
+}
+
+.projects .section__title {
+    color: var(--color-offwhite);
+}
+
+.projects .section__subtitle {
+    color: var(--color-gold-light);
+}
+
+.projects .divider {
+    background-color: var(--color-red);
 }
 
 .projects__grid {
@@ -19,7 +68,17 @@
     overflow: hidden;
     aspect-ratio: 3 / 4;
     cursor: pointer;
-    background-color: var(--color-cream);
+    background-color: rgba(42, 13, 16, 0.5);
+    border: 1px solid rgba(139, 30, 30, 0.2);
+    transition: border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+    border-color: var(--color-red);
+    box-shadow:
+        0 8px 40px rgba(139, 30, 30, 0.3),
+        0 0 0 1px rgba(139, 30, 30, 0.2);
 }
 
 .project-card__image {
@@ -37,8 +96,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to top,
-            rgba(42, 13, 16, 0.9) 0%,
-            rgba(42, 13, 16, 0.3) 40%,
+            rgba(10, 12, 12, 0.95) 0%,
+            rgba(42, 13, 16, 0.4) 40%,
             transparent 100%);
     display: flex;
     flex-direction: column;
@@ -69,14 +128,15 @@
 .project-card__tag {
     display: inline-block;
     padding: 4px 12px;
-    border: 1px solid var(--color-gold);
-    color: var(--color-gold-light);
+    border: 1px solid var(--color-red);
+    color: var(--color-offwhite);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     border-radius: 20px;
     margin-top: var(--space-sm);
     width: fit-content;
+    background-color: rgba(139, 30, 30, 0.3);
 }
 
 /* Responsive */

@@ -1,6 +1,37 @@
 import { motion } from 'framer-motion';
 import './About.css';
 
+const sections = [
+    {
+        id: 'mision',
+        title: 'Misión',
+        text: 'Perle Noire busca crear moda auténtica que desafíe lo convencional y abrace la dualidad entre oscuridad y dulzura. A través de prendas que fusionan lo delicado con lo caótico, la marca invita a reflexionar sobre la identidad, la libertad de expresar ideales sin silencios. Cada diseño es un reflejo donde se celebra la diferencia, la sensibilidad y el pensamiento crítico.',
+    },
+    {
+        id: 'vision',
+        title: 'Visión',
+        text: 'Convertirse en una marca referente en moda alternativa y expresiva, reconocida por transformar la oscuridad en belleza y ofrecer un espacio de autenticidad para quienes buscan vestirse de acuerdo con sus emociones e ideales. Perle Noire inspira nuevas formas de mirar la moda como un lenguaje poético y rebelde, donde cada detalle sea un manifiesto de lo profundamente personal.',
+    },
+    {
+        id: 'propuesta',
+        title: 'Propuesta de Valor',
+        text: 'Perle Noire ofrece una moda que transforma la oscuridad en belleza y la autenticidad en fuerza. Cada prenda es una extensión emocional, diseñada para quienes se atreven a mostrarse tal como son, sin ocultar sus contrastes. La marca combina estética alternativa con sensibilidad artesanal, integrando detalles simbólicos, texturas envolventes y una narrativa visual que celebra la dulzura dentro de la penumbra.',
+    },
+];
+
+const blockVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: i * 0.15,
+            duration: 0.7,
+            ease: [0.16, 1, 0.3, 1],
+        },
+    }),
+};
+
 export default function About() {
     return (
         <section id="sobre-mi" className="about section">
@@ -35,34 +66,36 @@ export default function About() {
                         viewport={{ once: true, margin: '-80px' }}
                         transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <h2 className="about__heading">Sobre Mí</h2>
+                        <h2 className="about__heading">Nuestra Esencia</h2>
                         <div className="about__gold-line" />
-                        <p className="about__paragraph">
-                            Estudiante de Diseño de Vestuario apasionada por la moda, la textura
-                            y la narrativa detrás de cada prenda. Mi trabajo explora la intersección
-                            entre lo clásico y lo contemporáneo, buscando siempre crear piezas que
-                            cuenten una historia.
-                        </p>
-                        <p className="about__paragraph">
-                            Cada colección nace de una investigación profunda de materiales,
-                            técnicas artesanales y tendencias globales, fusionadas con una visión
-                            personal que celebra la elegancia atemporal.
-                        </p>
 
-                        <div className="about__stats">
-                            <div className="about__stat">
-                                <span className="about__stat-number">6+</span>
-                                <span className="about__stat-label">Colecciones</span>
-                            </div>
-                            <div className="about__stat">
-                                <span className="about__stat-number">30+</span>
-                                <span className="about__stat-label">Diseños</span>
-                            </div>
-                            <div className="about__stat">
-                                <span className="about__stat-number">2+</span>
-                                <span className="about__stat-label">Años</span>
-                            </div>
+                        <div className="about__blocks">
+                            {sections.map((section, i) => (
+                                <motion.div
+                                    key={section.id}
+                                    className="about__block"
+                                    custom={i}
+                                    variants={blockVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: '-30px' }}
+                                >
+                                    <h3 className="about__block-title">{section.title}</h3>
+                                    <p className="about__paragraph">{section.text}</p>
+                                </motion.div>
+                            ))}
                         </div>
+
+                        <motion.p
+                            className="about__closing"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.5, duration: 0.8 }}
+                        >
+                            Más que vestir, Perle Noire invita a habitar la propia identidad,
+                            a convertir lo oculto en arte y la vulnerabilidad en poder.
+                        </motion.p>
                     </motion.div>
                 </div>
             </div>

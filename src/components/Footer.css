@@ -3,7 +3,7 @@
    ========================================== */
 
 .footer {
-    background-color: var(--color-burgundy);
+    background-color: var(--color-black);
     padding: var(--space-md) var(--space-md);
 }
 
@@ -41,7 +41,7 @@
     height: 1px;
     background: linear-gradient(90deg,
             transparent,
-            var(--color-gold),
+            var(--color-red),
             transparent);
 }
 
@@ -64,5 +64,5 @@
 }
 
 .footer__social-link:hover {
-    color: var(--color-gold-light);
+    color: var(--color-red);
 }

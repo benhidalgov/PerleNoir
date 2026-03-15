@@ -1,0 +1,148 @@
+/* ==========================================
+   Manifesto Section — Dark, Cinematic
+   ========================================== */
+
+.manifesto {
+    background-color: var(--color-black);
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-2xl) var(--space-md);
+}
+
+/* Lace texture overlay */
+.manifesto::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 30px,
+            rgba(139, 30, 30, 0.03) 30px,
+            rgba(139, 30, 30, 0.03) 31px),
+        repeating-linear-gradient(-45deg,
+            transparent,
+            transparent 30px,
+            rgba(139, 30, 30, 0.03) 30px,
+            rgba(139, 30, 30, 0.03) 31px);
+    pointer-events: none;
+}
+
+/* Red atmospheric glow */
+.manifesto::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(139, 30, 30, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(42, 13, 16, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.manifesto__container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Top ornament */
+.manifesto__ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: var(--space-lg);
+}
+
+.manifesto__ornament-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-red), transparent);
+}
+
+.manifesto__ornament-diamond {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-red);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(139, 30, 30, 0.5);
+}
+
+/* Quote blocks */
+.manifesto__quote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    color: var(--color-offwhite);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    position: relative;
+}
+
+.manifesto__quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--color-red);
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    opacity: 0.5;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+/* Manifesto lines */
+.manifesto__lines {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.manifesto__line {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(247, 245, 246, 0.7);
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+}
+
+.manifesto__line em {
+    color: var(--color-red-warm);
+    font-style: italic;
+}
+
+.manifesto__line strong {
+    color: var(--color-offwhite);
+    font-weight: 500;
+}
+
+/* Label */
+.manifesto__label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: rgba(139, 30, 30, 0.6);
+    margin-top: var(--space-lg);
+}
+
+/* Divider between quote and lines */
+.manifesto__divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-red), transparent);
+    margin: 0 auto var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .manifesto {
+        padding: var(--space-xl) var(--space-sm);
+    }
+
+    .manifesto__quote::before {
+        font-size: 3rem;
+        top: -15px;
+        left: -5px;
+    }
+}

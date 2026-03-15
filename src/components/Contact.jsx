@@ -22,7 +22,7 @@ export default function Contact() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    ¿Te gustaría colaborar o saber más sobre mi trabajo?
+                    ¿Te atreves a mostrarte tal como eres?
                 </motion.p>
 
                 <motion.div
@@ -52,8 +52,9 @@ export default function Contact() {
 
                     <div className="contact__cta">
                         <p className="contact__cta-text">
-                            Estoy abierta a proyectos de colaboración, encargos personalizados
-                            y oportunidades en el mundo de la moda.
+                            Abierta a colaboraciones, encargos personalizados y nuevas formas
+                            de transformar la oscuridad en belleza. Si buscas moda que sea
+                            un manifiesto de lo profundamente personal, hablemos.
                         </p>
                         <motion.a
                             href="mailto:hola@perlenoire.com"

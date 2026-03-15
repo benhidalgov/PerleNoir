@@ -1,9 +1,57 @@
 /* ==========================================
-   Contact Section
+   Contact Section — Dark Aesthetic
    ========================================== */
 
 .contact {
-    background-color: var(--color-offwhite);
+    background-color: var(--color-burgundy);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lace texture */
+.contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 30px,
+            rgba(247, 245, 246, 0.015) 30px,
+            rgba(247, 245, 246, 0.015) 31px),
+        repeating-linear-gradient(-45deg,
+            transparent,
+            transparent 30px,
+            rgba(247, 245, 246, 0.015) 30px,
+            rgba(247, 245, 246, 0.015) 31px);
+    pointer-events: none;
+}
+
+/* Atmospheric glow */
+.contact::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(139, 30, 30, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.contact .section__container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact .section__title {
+    color: var(--color-offwhite);
+}
+
+.contact .section__subtitle {
+    color: var(--color-gold-light);
+}
+
+.contact .divider {
+    background-color: var(--color-red);
 }
 
 .contact__content {
@@ -33,7 +81,8 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: var(--color-burgundy);
+    background-color: rgba(139, 30, 30, 0.4);
+    border: 1px solid rgba(139, 30, 30, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,26 +90,28 @@
     font-size: 1.2rem;
     margin-bottom: var(--space-xs);
     transition: transform var(--transition-fast),
-        background-color var(--transition-fast);
+        background-color var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
 .contact__icon:hover {
     transform: scale(1.1);
-    background-color: var(--color-burgundy-light);
+    background-color: var(--color-red);
+    box-shadow: 0 4px 20px rgba(139, 30, 30, 0.4);
 }
 
 .contact__label {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-burgundy-light);
+    color: var(--color-gold-light);
     font-weight: 500;
 }
 
 .contact__value {
     font-family: var(--font-heading);
     font-size: 1rem;
-    color: var(--color-burgundy);
+    color: var(--color-offwhite);
 }
 
 /* CTA */
@@ -73,7 +124,7 @@
 
 .contact__cta-text {
     font-size: 0.95rem;
-    color: var(--color-burgundy-light);
+    color: rgba(247, 245, 246, 0.6);
     font-weight: 300;
     text-align: center;
     max-width: 500px;
@@ -84,20 +135,23 @@
     align-items: center;
     gap: 8px;
     padding: 14px 36px;
-    background-color: var(--color-burgundy);
+    background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-dark) 100%);
     color: var(--color-offwhite);
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     border-radius: 4px;
-    transition: background-color var(--transition-fast),
-        transform var(--transition-fast);
+    border: 1px solid rgba(139, 30, 30, 0.5);
+    transition: background var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
 .contact__button:hover {
-    background-color: var(--color-burgundy-light);
+    background: linear-gradient(135deg, var(--color-red-warm) 0%, var(--color-red) 100%);
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 30, 30, 0.4);
 }
 
 /* Social Links */
@@ -111,21 +165,24 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid var(--color-burgundy);
+    border: 1px solid rgba(247, 245, 246, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-burgundy);
+    color: rgba(247, 245, 246, 0.6);
     font-size: 1.1rem;
     transition: background-color var(--transition-fast),
         color var(--transition-fast),
-        transform var(--transition-fast);
+        transform var(--transition-fast),
+        border-color var(--transition-fast);
 }
 
 .contact__social-link:hover {
-    background-color: var(--color-burgundy);
+    background-color: var(--color-red);
+    border-color: var(--color-red);
     color: var(--color-offwhite);
     transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(139, 30, 30, 0.3);
 }
 
 @media (max-width: 600px) {

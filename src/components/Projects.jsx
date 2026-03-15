@@ -80,7 +80,7 @@ export default function Projects() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    Cada colección cuenta una historia a través de la tela, la forma y el color
+                    Donde lo oculto se viste de belleza y la moda se convierte en libertad
                 </motion.p>
 
                 <div className="projects__grid">

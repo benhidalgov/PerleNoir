@@ -35,6 +35,11 @@
   --color-gold: #c9a96e;
   --color-gold-light: #d4bc8e;
 
+  /* Red Accents */
+  --color-red: #8B1E1E;
+  --color-red-warm: #a52a2a;
+  --color-red-dark: #6b1515;
+
   /* Typography */
   --font-heading: 'Bilment', 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -77,13 +82,18 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-offwhite);
-  color: var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-offwhite);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 400;
   line-height: 1.2;
@@ -126,16 +136,16 @@ ul {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-offwhite);
+  background: var(--color-black);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-burgundy);
+  background: var(--color-red);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-burgundy-light);
+  background: var(--color-red-warm);
 }
 
 /* Section base */
@@ -152,12 +162,13 @@ ul {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: var(--space-sm);
   text-align: center;
+  color: var(--color-offwhite);
 }
 
 .section__subtitle {
   font-size: 1rem;
   text-align: center;
-  color: var(--color-burgundy-light);
+  color: var(--color-gold-light);
   margin-bottom: var(--space-lg);
   font-weight: 300;
   letter-spacing: 0.05em;
@@ -167,6 +178,6 @@ ul {
 .divider {
   width: 60px;
   height: 2px;
-  background-color: var(--color-gold);
+  background: linear-gradient(90deg, var(--color-red), var(--color-red-dark));
   margin: var(--space-sm) auto var(--space-md);
 }
