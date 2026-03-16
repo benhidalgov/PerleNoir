@@ -55,7 +55,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
             >
-                <span>Scroll</span>
+                <span>Desliza</span>
                 <div className="hero__scroll-line" />
             </motion.div>
         </section>

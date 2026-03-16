@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navbar.css';
 
@@ -12,6 +13,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +27,42 @@ export default function Navbar() {
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+
+    const isHomePage = location.pathname === '/';
+
+    if (isHomePage) {
+      // On homepage: smooth scroll to section
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // On other pages: navigate home, then scroll after render
+      navigate('/' + href);
+      // Small delay to allow the homepage to render before scrolling
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
+  const handleBrandClick = (e) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
     }
   };
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
-        <a href="#inicio" className="navbar__brand" onClick={(e) => handleLinkClick(e, '#inicio')}>
+        <a href="/" className="navbar__brand" onClick={handleBrandClick}>
           <img src="/logo.png" alt="Perle Noire" className="navbar__logo" />
           <span className="navbar__name">Perle Noire</span>
         </a>

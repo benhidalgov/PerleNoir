@@ -1,29 +1,27 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Manifesto from './components/Manifesto';
-import Projects from './components/Projects';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import { LaceDivider, LacePattern, RedStripe } from './components/LaceDivider';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CollectionDetail from './pages/CollectionDetail';
+
+/* Scroll to top on route change */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Manifesto />
-        <RedStripe />
-        <Projects />
-        <LacePattern variant="light" />
-        <About />
-        <LaceDivider variant="light" />
-        <Contact />
-      </main>
-      <RedStripe />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/coleccion/:slug" element={<CollectionDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
