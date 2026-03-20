@@ -1,48 +1,51 @@
 /* ==========================================
-   Entrance Screen
+   Entrance Screen - Gothic Aesthetic
    ========================================== */
 
 .entrance {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background-color: var(--color-burgundy);
+    background-color: var(--color-burgundy-dark);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
-/* Lace texture overlay to match Hero */
-.entrance::before {
-    content: '';
+/* Spider Web SVG Styling */
+.entrance__web {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 50% 50%,
-            rgba(201, 169, 110, 0.06) 0%,
-            transparent 70%),
-        repeating-linear-gradient(45deg,
-            transparent,
-            transparent 20px,
-            rgba(139, 30, 30, 0.04) 20px,
-            rgba(139, 30, 30, 0.04) 21px),
-        repeating-linear-gradient(-45deg,
-            transparent,
-            transparent 20px,
-            rgba(139, 30, 30, 0.04) 20px,
-            rgba(139, 30, 30, 0.04) 21px);
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: 0;
+    /* Rotation for an asymmetrical, more natural web look */
+    transform: rotate(15deg); 
 }
 
-/* Red accent glow behind */
+.spider-spoke {
+    stroke: var(--color-red-dark);
+    stroke-width: 0.4;
+    opacity: 0.8;
+}
+
+.spider-thread {
+    fill: none;
+    stroke: var(--color-red);
+    stroke-width: 0.25;
+    opacity: 0.6;
+}
+
+/* Vignette / Deep Shadow Overlay */
 .entrance::after {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 50% 50%, rgba(139, 30, 30, 0.15) 0%, transparent 60%);
+    background: radial-gradient(circle at 50% 50%, transparent 10%, rgba(10, 12, 12, 0.85) 100%);
     pointer-events: none;
+    z-index: 0;
 }
 
 .entrance__content {
@@ -63,10 +66,10 @@
     justify-content: center;
     padding: 20px;
     box-shadow:
-        0 8px 40px rgba(0, 0, 0, 0.3),
-        0 0 0 2px var(--color-red),
-        0 0 0 4px rgba(139, 30, 30, 0.3),
-        0 0 40px rgba(139, 30, 30, 0.2);
+        0 8px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 2px var(--color-red-dark),
+        0 0 0 5px rgba(139, 30, 30, 0.3),
+        0 0 60px rgba(139, 30, 30, 0.5);
 }
 
 .entrance__logo {
@@ -79,16 +82,17 @@
     height: 1px;
     background: linear-gradient(90deg,
             transparent,
-            var(--color-gold),
+            var(--color-red-warm),
             transparent);
 }
 
 .entrance__text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--color-gold-light);
-    letter-spacing: 0.3em;
+    color: var(--color-red-warm);
+    letter-spacing: 0.4em;
     font-weight: 300;
+    text-shadow: 0 0 15px rgba(139, 30, 30, 0.5);
 }
 
 @media (max-width: 768px) {
