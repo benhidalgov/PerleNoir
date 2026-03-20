@@ -74,6 +74,8 @@ export default function Entrance() {
         >
             <SpiderWeb />
             <div className="entrance__content">
+                <div aria-hidden="true" /> {/* Top spacer for grid balancing */}
+                
                 <motion.div
                     className="entrance__logo-container"
                     initial={{ scale: 0.85, opacity: 0 }}
@@ -83,21 +85,23 @@ export default function Entrance() {
                     <img src="/logo.png" alt="Perle Noire Logo" className="entrance__logo" />
                 </motion.div>
 
-                <motion.div
-                    className="entrance__divider"
-                    initial={{ width: 0 }}
-                    animate={{ width: 80 }}
-                    transition={{ duration: 1, delay: 1.2, ease: 'easeInOut' }}
-                />
+                <div className="entrance__text-wrapper">
+                    <motion.div
+                        className="entrance__divider"
+                        initial={{ width: 0 }}
+                        animate={{ width: 80 }}
+                        transition={{ duration: 1, delay: 1.2, ease: 'easeInOut' }}
+                    />
 
-                <motion.div
-                    className="entrance__text"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.6 }}
-                >
-                    PERLE NOIRE
-                </motion.div>
+                    <motion.div
+                        className="entrance__text"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 1.6 }}
+                    >
+                        PERLE NOIRE
+                    </motion.div>
+                </div>
             </div>
         </motion.div>
     );
