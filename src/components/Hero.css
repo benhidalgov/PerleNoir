@@ -47,6 +47,13 @@
     pointer-events: none;
 }
 
+[data-theme="light"] .hero::after {
+    background:
+        radial-gradient(ellipse at 20% 80%, rgba(139, 30, 30, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 30, 30, 0.02) 0%, transparent 50%);
+}
+
+
 .hero__content {
     display: flex;
     flex-direction: column;
@@ -72,6 +79,11 @@
         0 0 0 8px rgba(201, 169, 110, 0.15),
         0 0 60px rgba(139, 30, 30, 0.15);
 }
+
+[data-theme="light"] .hero__logo-container {
+    background-color: var(--color-black); /* Lighter cream in light mode */
+}
+
 
 .hero__logo {
     width: 100%;
@@ -101,6 +113,11 @@
     letter-spacing: 0.3em;
     margin-top: -8px;
 }
+
+[data-theme="light"] .hero__tagline--sub {
+    color: rgba(26, 7, 9, 0.6);
+}
+
 
 .hero__divider {
     width: 60px;

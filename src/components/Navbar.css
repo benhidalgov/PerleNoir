@@ -25,6 +25,11 @@
     border-bottom: 1px solid rgba(139, 30, 30, 0.2);
 }
 
+[data-theme="light"] .navbar--scrolled {
+    background-color: rgba(245, 240, 237, 0.95);
+    box-shadow: 0 1px 20px rgba(139, 30, 30, 0.1);
+}
+
 .navbar__inner {
     max-width: var(--max-width);
     width: 100%;
@@ -146,6 +151,11 @@
         pointer-events: none;
         transition: opacity var(--transition-normal);
     }
+
+    [data-theme="light"] .navbar__mobile-menu {
+        background-color: rgba(245, 240, 237, 0.98);
+    }
+
 
     .navbar__mobile-menu--open {
         opacity: 1;

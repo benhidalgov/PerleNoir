@@ -37,6 +37,36 @@
     fill: var(--color-red);
 }
 
+/* === Light Theme Overrides === */
+[data-theme="light"] .lace-divider--light,
+[data-theme="light"] .lace-divider--dark {
+    color: var(--color-burgundy-dark);
+}
+
+[data-theme="light"] .lace-divider--light svg,
+[data-theme="light"] .lace-divider--dark svg {
+    fill: none;
+}
+
+[data-theme="light"] .lace-divider--light svg path,
+[data-theme="light"] .lace-divider--dark svg path {
+    fill: none;
+    stroke: var(--color-burgundy-dark);
+    stroke-width: 1.5;
+    opacity: 0.5;
+}
+
+[data-theme="light"] .lace-divider--light svg circle,
+[data-theme="light"] .lace-divider--dark svg circle {
+    fill: var(--color-burgundy-dark);
+    opacity: 0.4;
+}
+
+[data-theme="light"] .lace-divider {
+    opacity: 1;
+}
+
+
 /* Flip for bottom of sections */
 .lace-divider--flip {
     transform: rotate(180deg);

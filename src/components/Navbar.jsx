@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 import './Navbar.css';
 
@@ -81,15 +82,18 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button
-          className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        <div className="navbar__actions" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <ThemeToggle />
+          <button
+            className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
 
         <div className={`navbar__mobile-menu ${menuOpen ? 'navbar__mobile-menu--open' : ''}`}>
           {navLinks.map((link, i) => (

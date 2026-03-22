@@ -38,6 +38,13 @@
     pointer-events: none;
 }
 
+[data-theme="light"] .about::after {
+    background:
+        radial-gradient(ellipse at 20% 60%, rgba(139, 30, 30, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(139, 30, 30, 0.02) 0%, transparent 50%);
+}
+
+
 .about .section__container {
     position: relative;
     z-index: 1;
@@ -166,6 +173,11 @@
     font-weight: 300;
 }
 
+[data-theme="light"] .about__paragraph {
+    color: rgba(26, 7, 9, 0.7);
+}
+
+
 .about__stats {
     display: flex;
     gap: var(--space-md);
@@ -193,6 +205,11 @@
     color: rgba(247, 245, 246, 0.5);
     font-weight: 500;
 }
+
+[data-theme="light"] .about__stat-label {
+    color: rgba(26, 7, 9, 0.6);
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {

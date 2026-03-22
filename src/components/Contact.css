@@ -37,6 +37,12 @@
     pointer-events: none;
 }
 
+[data-theme="light"] .contact::after {
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(139, 30, 30, 0.04) 0%, transparent 60%);
+}
+
+
 .contact .section__container {
     position: relative;
     z-index: 1;
@@ -130,6 +136,11 @@
     max-width: 500px;
 }
 
+[data-theme="light"] .contact__cta-text {
+    color: rgba(26, 7, 9, 0.7);
+}
+
+
 .contact__button {
     display: inline-flex;
     align-items: center;
@@ -176,6 +187,12 @@
         transform var(--transition-fast),
         border-color var(--transition-fast);
 }
+
+[data-theme="light"] .contact__social-link {
+    border-color: rgba(26, 7, 9, 0.2);
+    color: rgba(26, 7, 9, 0.7);
+}
+
 
 .contact__social-link:hover {
     background-color: var(--color-red);

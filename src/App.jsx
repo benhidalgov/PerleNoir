@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import HomePage from './pages/HomePage';
 import CollectionDetail from './pages/CollectionDetail';
 import Entrance from './components/Entrance';
+import CustomCursor from './components/CustomCursor';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -30,6 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <CustomCursor />
       
       <AnimatePresence mode="wait">
         {showEntrance && <Entrance key="entrance" />}

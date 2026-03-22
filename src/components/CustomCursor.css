@@ -1,0 +1,32 @@
+.victorian-heart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 9999;
+  /* Shift element so the bottom tip (20, 36) is exactly at the mouse */
+  margin-top: -36px; 
+  margin-left: -20px;
+  
+  /* Use the main text color so it naturally adapts to Vigilia/Umbral */
+  color: var(--color-offwhite);
+  transition: color var(--transition-fast), filter var(--transition-fast);
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.victorian-heart--hover {
+  color: var(--color-red);
+  filter: drop-shadow(0px 4px 8px rgba(139, 30, 30, 0.4));
+}
+
+[data-theme="light"] .victorian-heart {
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.15));
+}
+
+[data-theme="light"] .victorian-heart--hover {
+  filter: drop-shadow(0px 4px 8px rgba(139, 30, 30, 0.3));
+}
+
+
